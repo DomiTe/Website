@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominic Tarnowski</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - VT323 for retro monospace feel -->
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <!-- Three.js CDN for 3D graphics -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        /* Custom Tailwind Configuration */
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        :root {
+            --neon-green: #39FF14; /* Bright neon green */
+            --dark-purple: #4B0082; /* Deep violet */
+            --electric-blue: #00FFFF; /* Cyan */
+            --hot-pink: #FF1493; /* Deep pink */
+            --dark-bg: #0A0A0A; /* Almost black */
+        }
+
+        body {
+            font-family: 'VT323', monospace;
+            background-color: var(--dark-bg); /* Fallback/base color */
+            color: var(--neon-green);
+            overflow-x: hidden; /* Prevent horizontal scroll due to 3D */
+            position: relative; /* Needed for z-index context */
+        }
+
+        /* Custom glow effect for text and buttons */
+        .text-glow {
+            text-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green), 0 0 15px var(--neon-green);
+        }
+        .button-glow {
+            box-shadow: 0 0 8px var(--electric-blue), 0 0 15px var(--electric-blue), 0 0 25px var(--electric-blue);
+        }
+        .button-glow:hover {
+            box-shadow: 0 0 12px var(--hot-pink), 0 0 20px var(--hot-pink), 0 0 30px var(--hot-pink);
+        }
+
+        /* Typing effect for headline */
+        .typing-text::after {
+            content: '|';
+            animation: blink-caret .75s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--neon-green); }
+        }
+
+        /* Styles for the 3D background canvas */
+        #three-canvas {
+            position: fixed; /* Fixes the canvas to the viewport */
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1; /* Puts it behind all other content */
+            display: block;
+        }
+
+        /* Ensure main content is above the canvas */
+        main, header, footer {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-between p-4 md:p-8">
+
+    <!-- Three.js Canvas for 3D Background -->
+    <canvas id="three-canvas"></canvas>
+
+    <!-- Header Section -->
+    <header class="w-full max-w-4xl text-center py-8">
+        <h1 class="text-5xl md:text-7xl font-bold text-glow mb-4 typing-text overflow-hidden whitespace-nowrap border-r-4 border-solid border-neon-green pr-1 animate-typing">
+            Dominic Tarnowski
+        </h1>
+        <p class="text-xl md:text-2xl text-purple-400 text-glow">
+            <span class="text-electric-blue">&gt;</span> Welcome, Visitor. Your data stream awaits.
+        </p>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="flex-grow w-full max-w-4xl bg-gray-900 bg-opacity-70 rounded-lg p-6 md:p-10 border-2 border-electric-blue shadow-lg shadow-electric-blue/30 flex flex-col items-center justify-center">
+        <section class="mb-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-hot-pink text-glow mb-4">
+                SYSTEM LOG // 2077.07.24
+            </h2>
+            <p class="text-lg md:text-xl leading-relaxed text-gray-300">
+                Some Text eventually...
+            </p>
+        </section>
+
+        <!-- Navigation Buttons for About Me and Projects -->
+        <div class="flex flex-wrap justify-center gap-4 mb-8">
+            <a href="#about-me-section" class="bg-purple-800 hover:bg-hot-pink text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 button-glow text-xl border border-electric-blue no-underline">
+                <span class="text-electric-blue">&gt;</span> ABOUT ME
+            </a>
+            <a href="#projects-section" class="bg-blue-800 hover:bg-electric-blue text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 button-glow text-xl border border-hot-pink no-underline">
+                <span class="text-hot-pink">&gt;</span> PROJECTS
+            </a>
+        </div>
+
+
+        <!-- About Me Section -->
+        <section id="about-me-section" class="mb-8 w-full text-left p-4 border border-electric-blue rounded-md bg-gray-800 bg-opacity-50">
+            <h3 class="text-2xl font-bold text-hot-pink text-glow mb-3">
+                <span class="text-neon-green">&gt;</span> DATA_PROFILE
+            </h3>
+            <div id="about-me-output" class="text-lg md:text-xl leading-relaxed text-gray-300 whitespace-pre-wrap">
+                <p>Retrieving personal data from secure archives...</p>
+                <!-- CV text will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects-section" class="mb-8 w-full text-left p-4 border border-purple-600 rounded-md bg-gray-800 bg-opacity-50">
+            <h3 class="text-2xl font-bold text-electric-blue text-glow mb-3">
+                <span class="text-neon-green">&gt;</span> PROJECTS  
+            </h3>
+            <div id="projects-output" class="space-y-4">
+                <p>Scanning active contracts database...</p>
+                <!-- Projects content will be injected here -->
+            </div>
+        </section>
+
+                <!-- Dynamic System Status Section -->
+        <section id="system-status-section" class="mb-8 w-full text-left p-4 border border-purple-600 rounded-md bg-gray-800 bg-opacity-50">
+            <h3 class="text-2xl font-bold text-electric-blue text-glow mb-3">
+                <span class="text-neon-green">&gt;</span> SYSTEM STATUS REPORT:
+            </h3>
+            <div id="system-status-output" class="text-sm md:text-base text-gray-400 leading-relaxed">
+                <p>Loading system data...</p>
+                <!-- Dynamic content will be injected here -->
+            </div>
+        </section>
+
+        <div class="flex flex-wrap justify-center gap-4 mt-8">
+            <button class="bg-blue-800 hover:bg-hot-pink text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 button-glow text-xl border border-electric-blue" onclick="fetchSystemStatus()">
+                <span class="text-electric-blue">&gt;</span> REFRESH STATUS
+            </button>
+            <!-- <button class="bg-purple-800 hover:bg-electric-blue text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 button-glow text-xl border border-hot-pink" onclick="alert('Functionality not yet implemented. Stay tuned, choom!')">
+                <span class="text-hot-pink">&gt;</span> DECRYPT DATA
+            </button> -->
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="w-full max-w-4xl text-center py-6 mt-8">
+        <p class="text-sm md:text-base text-gray-500">
+            &copy; 2077 Neon City Corp. All rights reserved. // <span class="text-electric-blue">PROTOCOL_V.0.1</span>
+        </p>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js" defer></script>
+</body>
+</html>
