@@ -1,56 +1,59 @@
 ////////////////////////////////////////////////////////
-// CYBERNETIC RESUME // V.4.0.0 // ACCESS LEVEL: PUBLIC
+// CYBERNETIC RESUME // V.4.1.0 // ACCESS LEVEL: PUBLIC
 ////////////////////////////////////////////////////////
-
-[DESIGNATION]: Dominic Tarnowski
-[LOCATION]: Berlin, Deutschland
-[COMMS_ID]: +49 1577 2522057
-[DATA_STREAM]: domi.tarno@proton.me
-[NETWORK_LINKS]: Linkedin, Github
 
 [WORK_EXPERIENCE_LOG]:
 > 08/2023 - 10/2024 // Studentische Hilfskraft // DigiProSMK, Humboldt Universität zu Berlin
-- Implementation and conception of Social Virtual Reality (Social VR) environments with Unity
-- Programming of user interfaces and interaction mechanics in C#
-- Integration of network components for multiplayer environments
-- Adaptation and optimization of 3D models with Blender
-- Team development within an agile lifecycle (SCRUM, Git)
-- Coordination with interdisciplinary partners on design decisions
+- Implementierung und Konzipierung von Social Virtual Reality (Social VR) -Umgebungen mit Unity
+- Entwicklung von wiederverwendbaren Software-Komponenten und Schnittstellen in C#
+- Integration von Netzwerkkomponenten für Mehrspieler-Umgebungen
+- Anpassung und Optimierung von 3D-Modellen mit Blender
+- Team-Entwicklung im Rahmen eines agilen Lifecycles (SCRUM, Git)
+- Abstimmung mit interdisziplinären Partnern zu Designentscheidungen
 
 > Since 04/2025 // [CURRENT_ROLE - Student]
 
 [EDUCATION_PROFILE]:
-> Master of Science // Applied Computer Science // Hochschule für Technik und Wirtschaft, Berlin
+> Master of Science // Angewandte Informatik // Hochschule für Technik und Wirtschaft, Berlin
+- Since 04/2025
+
+> Bachelor of Science // Informatik // Humboldt Universität zu Berlin, Berlin
+- Bachelorthesis: Anforderungsanalyse für eine SocialVR Lobby (Note 1,7)
+- Tutor für 1. Semester Studierende der Informatik
 - 10/2021 - 10/2024
 
-> Bachelor of Science // Computer Science // Humboldt Universität zu Berlin, Berlin
-- Bachelorthesis: Requirements Analysis for a SocialVR Lobby (Grade 1,7)
-- Deconvolutional Neural Network for a Fluorescence Spectrometer at BESSY II
-- Prototype for a Labyrinth Video Game with C++ and OpenGL
-- Tutor for 1st semester Computer Science students
-- 10/2019 - 09/2021
-
-> Orientation Study // MINTgrün // Technische Universität Berlin, Berlin
+> Orientierungsstudium // MINTgrün // Technische Universität Berlin, Berlin
 - 10/2018 - 09/2019
 
 > Abitur // Katholische Schule St. Marien, Berlin
 - 08/2012 - 07/2018
+
+[PROJECT_DATABASE]:
+> Capacitated Facility Location Solver // Python, PySCIPOpt, OSMnx, GeoPandas
+- Entwicklung eines Solvers für das kapazitierte Standortproblem (CFLP) mittels Mixed-Integer-Programming.
+- Implementierung von Geodatenverarbeitung und interaktiven Kartenvisualisierungen (Folium).
+- Aufbau einer modularen Projektstruktur mit Konfigurationsmanagement (Pydantic) und Unit-Tests.
+
+> Deconvolutional Neural Network // Python, TensorFlow, Keras
+- Entwicklung eines neuronalen Netzes zur Rekonstruktion von Spektrometerdaten am BESSY II.
+
+> Prototyp für ein Labyrinth-Videospiel // C++, OpenGL
+- Entwicklung eines 3D-Labyrinthspiels mit der OpenGL-Grafikbibliothek.
+
+[SKILLS_MATRIX]:
+> Programmiersprachen: C#, Python, C++, Java
+> Technologien: .NET (ASP.NET), Git & CI/CD
+> Methoden: Agile Entwicklung (SCRUM)
 
 [CERTIFICATION_MATRIX]:
 > 12/2024 // Back-End Development with .NET // Coursera (Microsoft)
 > 04/2021 // Using Python to Access Web Data // Coursera
 > 04/2021 // Python Data Structures // Coursera
 
-[SKILLS_MATRIX]:
-> Programming Languages: C#, C++, Python, C
-> Frameworks: .NET, ASP.NET
-> DevOps: Git, GitLab (CI/CD)
-> Other: Web Scraping, Agile Development (SCRUM)
-
 [LANGUAGE_MODULES]:
-> Deutsch: Native Speaker
-> Englisch: C1-C2
-> Chinesisch: A1
+> Deutsch: Muttersprache
+> Englisch: C1 Niveau
+> Chinesisch: Grundlagen (A1)
 
 ////////////////////////////////////////////////////////
 // END OF FILE // DECRYPTING... // TRANSMISSION COMPLETE
